@@ -4,8 +4,6 @@ package yanevskyy;
  * Checks integer. It is an even or not?
  */
 public class EvenNumber extends ReadWrite implements Actions {
-    private int evenNumber;
-    private String string;
 
     /**
      * Gets data from console.
@@ -14,10 +12,10 @@ public class EvenNumber extends ReadWrite implements Actions {
     public String performance() {
         writes("Введите число");
         try {
-            evenNumber = Integer.parseInt(reads());
+            return (Integer.parseInt(reads()) % 2)  == 0 ? "Чётное" : "Не чётное";
         } catch (NumberFormatException e) {
             writes("Не верные данные");
+            return "";
         }
-        return (evenNumber % 2)  == 0 ? "Чётное" : "Не чётное";
     }
 }

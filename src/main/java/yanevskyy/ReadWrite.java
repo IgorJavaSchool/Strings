@@ -5,20 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public abstract class ReadWrite {
+  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
   /**
    * Reads from console
    */
   public String reads() {
-    try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-      String string = reader.readLine();
-      reader.close();
-      return string;
-
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return "";
+      try {
+          return reader.readLine();
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+      return "";
   }
 
   /**
