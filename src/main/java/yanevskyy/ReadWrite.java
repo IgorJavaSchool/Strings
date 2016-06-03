@@ -11,7 +11,9 @@ public abstract class ReadWrite {
    */
   public String reads() {
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-      return reader.readLine();
+      String string = reader.readLine();
+      reader.close();
+      return string;
 
     } catch (IOException e) {
       e.printStackTrace();
