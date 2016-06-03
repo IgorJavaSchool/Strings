@@ -1,5 +1,8 @@
 package yanevskyy;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Polindrom extends ReadWrite implements Actions {
 
   public String performance() {
@@ -16,8 +19,9 @@ public class Polindrom extends ReadWrite implements Actions {
     }
   }
 
-  public boolean checkSymbol(String line){
-
-    return "^[A-Za-zА-Яа-я]+$".matches(line);
-  }
+    public boolean checkSymbol(String line){
+        Pattern pattern = Pattern.compile("^[A-Za-zА-Яа-я]+$");
+        Matcher matcher = pattern.matcher(line);
+        return matcher.matches();
+    }
 }
