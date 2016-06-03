@@ -47,6 +47,37 @@ public class BoardActionsTest {
         systemInMock.provideLines("-2","-3.2", "1");
 
         assertEquals("1.0", actions[2].performance());
+
+        systemInMock.provideLines("-2","-3.2", "-1");
+
+        assertEquals("-1.0", actions[2].performance());
+    }
+
+    @Test
+    public void WhenTakesWordShouldCheckIsPolindrom() {
+        systemInMock.provideLines("Komok");
+
+        assertEquals("Это слово полиндром", actions[3].performance());
+
+        systemInMock.provideLines("POTOP");
+
+        assertEquals("Это слово полиндром", actions[3].performance());
+
+        systemInMock.provideLines("POTO1");
+
+        assertEquals("Не корректные данные", actions[3].performance());
+
+        systemInMock.provideLines("POTO ");
+
+        assertEquals("Не корректные данные", actions[3].performance());
+
+        systemInMock.provideLines("POTO");
+
+        assertEquals("Не корректные данные", actions[3].performance());
+
+        systemInMock.provideLines("werty");
+
+        assertEquals("Это слово НЕ полиндром", actions[3].performance());
     }
 
     @Before
