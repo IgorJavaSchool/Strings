@@ -1,7 +1,14 @@
 package yanevskyy;
 
+/**
+ * Adds two integers.
+ */
 public class AddsIntegers extends ReadWrite implements Actions {
 
+  /**
+   * Gets two integers from console.
+   * Adds two integers.
+   */
   public String performance() {
     writes("Введите два числа");
     try {

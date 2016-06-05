@@ -1,7 +1,9 @@
 package yanevskyy;
 
-import java.util.Map;
-
+/**
+ * Gets data from console.
+ * Finds minimal Integer by module
+ */
 public class MinimalModule extends ReadWrite implements Actions {
   double[] numbers;
   double count;
@@ -11,6 +13,10 @@ public class MinimalModule extends ReadWrite implements Actions {
     count = 0;
   }
 
+  /**
+   * Gets data from console.
+   * Finds minimal Integer by module
+   */
   public String performance() {
     writes("Введите три числа");
     for (int i = 0; i < numbers.length; i++) {
@@ -20,13 +26,11 @@ public class MinimalModule extends ReadWrite implements Actions {
         writes("Не корректные данные");
         return "";
       }
-        count = Math.abs(numbers[i]) < count ? count : numbers[i] ;
+      count = Math.abs(numbers[i]) < count ? count : numbers[i] ;
     }
     for (Double a : numbers) {
       count = count > Math.abs(a) ? a : count;
     }
-
     return count + "";
   }
-
 }

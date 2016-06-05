@@ -2,7 +2,10 @@ package yanevskyy;
 
 public interface Actions {
 
-
-  public String performance();
+  /**
+   * Performs actions on text and numbers .
+   * @return
+     */
+  String performance();
 
 }

@@ -1,6 +1,8 @@
 package yanevskyy;
 
-
+/**
+ * Runs program and runs user-selected action.
+ */
 public class BoardActions extends ReadWrite {
   public Actions[] actions;
 
@@ -8,6 +10,9 @@ public class BoardActions extends ReadWrite {
     this.actions = new Actions[]{new EvenNumber(), new AddsIntegers(), new MinimalModule(), new Polindrom()};
   }
 
+  /**
+   * Displays menu. Run user-selected action.
+   */
   public void startProgram() {
     writes("Выбирите действие:");
     writes("1 - Прворить, является ли число чётным");
